@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uso de comparaciones y estructuras de control</title>
+  <link rel="icon" href="imagenes/cargando.png">
+  <link rel="stylesheet" href="CSS/estilos_loading.css">
+</head>
+<body>
+  <div class="box">
+    <p>Iniciar sesión</p>
+    <hr>
+    <input type="text" id="usuario" name="usuario" placeholder="Usuario" autofocus>
+    <br><br>
+    <input type="password" id="password" name="password" placeholder="Contraseña">
+    <br><br>
+    <div style="display: flex; justify-content: center; align-items: center; height: 15vh;">
+      <button type="button" onclick="ingresar()">Ingresar</button>
+    </div>
+
+    <script>
+      function ingresar() {
+        const usuario = document.getElementById("usuario").value;
+        const password = document.getElementById("password").value;
+
+        if (usuario === "damian" && password === "aremy") {
+          window.location.href = "HTML/portada.html";
+        } 
+        else {
+          document.getElementById("usuario").value = "";
+          document.getElementById("password").value = "";
+          alert("Ingresó los datos de forma incorrecta, inténtelo nuevamente.");
+        }
+      }
+    </script>
+  </div>
+</body>
+</html>
+
+
+<!--
+placeholder=" masukan email"
+placeholder tiene como función:
+mostrar un texto de sugerencia o ejemplo corto dentro del campo de entrada antes de que el usuario escriba algo en él.
+
+Es decir, te sugiere algo anteriormente ingresado en el input (recuadro)
+Pero tambien muestra de forma tranparente lo que hay entre comillas.
+-->

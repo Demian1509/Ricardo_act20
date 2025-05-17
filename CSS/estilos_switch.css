@@ -1,0 +1,146 @@
+body {
+    background-image: url('../imagenes/fondoswitch.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-attachment: fixed;     /* Opcional: mantiene el fondo fijo al hacer scroll */
+    height: 100vh; /* <- Esto hace que el fondo cubra toda la pantalla */
+    margin: 0;      /* Elimina espacios por defecto */
+    padding: 0;
+}
+
+.contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    padding: 20px;
+
+     h1 {
+        color: white;
+        text-align: center;
+     }
+
+     h3 {
+        color:purple;
+        text-align: center;
+     }
+     p {
+        color: white;
+        padding-left: 20px;
+     }
+
+  }
+
+  .contenedor-h3 {
+    width: 500px;
+    height: 50px; 
+    background-color: yellowgreen;
+    margin: 0 auto; /* centra horizontalmente */
+    border-radius: 50px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+
+  input[type=number]{
+    width:270px;
+    height: 30px;
+    margin-top:40px;
+    margin-left:15px;
+    border:2px solid rgb(0, 107, 5);
+    background-color:yellowgreen;
+    border-radius:20px;
+    color:purple;
+  }
+
+  .btn-comprobar {
+    background-color: rgb(9, 167, 206); 
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: transform 0.2s ease; /* Para animar suavemente el cambio */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 10px; 
+    border-radius: 50px;
+  }
+  
+  .btn-comprobar:hover {
+    background-color: rgb(9, 167, 206);
+    transform: scale(1.2); /* Aumenta el tamaño al 120% */
+  }
+
+  .btn-regresar {
+    background-color: rgb(209, 76, 76); 
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: transform 0.2s ease; /* Para animar suavemente el cambio */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 10px;                   /* Espacio interior */
+    border-radius: 50px;
+    margin: 10px; /* Arriba, lados, abajo */ /* Arriba, derecha, abajo, izquierda */ /* 20px arriba y abajo, 10px a los lados */
+  }
+  
+  .btn-regresar:hover {
+    background-color: rgb(206, 0, 0);
+    transform: scale(1.2); /* Aumenta el tamaño al 120% */
+  }
+
+  .contenedor-informacion {
+    width: 500px;
+    height: 150px; 
+    background-color: yellowgreen;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 10px;
+  }
+
+@media (max-width: 420px) {
+  .contenedor-principal {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .contenedor-h3,
+  .contenedor-informacion {
+    width: 90%;
+    height: auto;
+    text-align: center;
+  }
+
+  input[type=number] {
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .btn-comprobar,
+  .btn-regresar {
+    width: 90%;
+    font-size: 1em;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    padding: 5px;
+    text-align: center;
+  }
+
+  h3, p {
+    font-size: 1em;
+    padding: 5px;
+    text-align: center;
+  }
+
+  #demo {
+    font-size: 0.95em;
+    padding: 10px;
+    text-align: center;
+  }
+}

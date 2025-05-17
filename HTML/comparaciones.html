@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparaciones</title>
+    <link rel="stylesheet" href="../CSS/estilos_comparaciones.css">
+    <link rel="icon" href="../imagenes/comparaciones.png">
+</head>
+<body>
+  <center>
+    <div class="section h1">
+    <div class="contenedor-de-h1">
+    <h1>Contesta el siguiente cuestionario:</h1>
+  </div>
+  </div>
+    <h3>Es importante que de ser necesario todas tu respuestas sean concretas en un "si" o un "no".</h3>
+
+    <p>¿Tu nombre es Juan?</p>
+    <input type="text" id="nombre" autofocus>
+
+    <p>Por favor ingrese su edad:</p>
+    <input type="text" id="edad">
+
+    <p>¿Cuántas veces come al dia?</p>
+    <input type="text" id="comida">
+
+    <p>¿Cuántas veces se baña por semana?</p>
+    <input type="text" id="ducha">
+
+    <p>¿Usted tiene casa propia?</p>
+    <input type="text" id="independiente">
+
+    <p>¿Usted ahorra dinero?</p>
+    <input type="text" id="mentedetiburon1">
+    <p>¿Usted invierte dinero?</p>
+    <input type="text" id="mentedetiburon2">
+
+    <p>¿Usted tiene hijos?</p>
+    <input type="text" id="familia"><br><br>
+
+    <div class="contenedor-respuestas">
+      <div class="contenedor-de-respuestas">
+        <p id="txt_explicacion">"Aqui apareceran las respuestas."</p>
+        <p id="cn" style="display:none">Wow, adivine su nombre!!!</p>
+        <p id="in" style="display:none">Ups, al parecer tienes un nombre diferente.</p>
+        <p id="ce" style="display:none">Genial, eres mayor de edad.</p>
+        <p id="ie" style="display:none">Al parecer eres menor de edad.</p>
+        <p id="cc" style="display:none">Felicidades! Comes las veces necesarias.</p>
+        <p id="ic" style="display:none">Al parecer te hace falta comer más seguido.</p>
+        <p id="cd" style="display:none">Te hace falta más aceo personal.</p>
+        <p id="id" style="display:none">Me alegro por tu higiene.</p>
+        <p id="ci" style="display:none">Felicidades, eres independiente.</p>
+        <p id="ii" style="display:none">Lucha por tu independencia personal.</p>
+        <p id="cm" style="display:none">Wow, sabes aprovechar el dinero tienes mente de tiburon!!!</p>
+        <p id="mm" style="display:none">Que bien! sabes aprovechar el dinero pero creo que puedes hacerlo mejor.</p>
+        <p id="im" style="display:none">Creo que podrias aprovechar mejor tu dinero.</p>
+        <p id="cf" style="display:none">Deberias planear una familia propia.</p>
+        <p id="if" style="display:none">Felicidades por tu familia.</p>
+      </div>
+      </div>
+
+    <br><br><button type="button" onclick="enviar()" class="btn-enviar">Enviar</button><br>
+
+  </center>
+    
+    <script>
+        function enviar() {
+            
+          const nombre = document.getElementById("nombre").value;
+          const edad = document.getElementById("edad").value;
+          const comida = document.getElementById("comida").value;
+          const ducha = document.getElementById("ducha").value;
+          const independiente = document.getElementById("independiente").value;
+          const mentedetiburon1 = document.getElementById("mentedetiburon1").value;
+          const mentedetiburon2 = document.getElementById("mentedetiburon2").value;
+          const familia = document.getElementById("familia").value;
+
+          document.getElementById("txt_explicacion").style.display='none';
+
+          if (nombre === "si" || nombre === "Si" || nombre === "SI" || nombre === "sI") {
+            document.getElementById('cn').style.display='block';
+          } 
+          else {
+            document.getElementById('in').style.display='block';
+            
+          }
+
+          if (edad >= 18) {
+            document.getElementById('ce').style.display='block';
+          } 
+          else if(edad<18){
+            document.getElementById('ie').style.display='block';
+            
+          }
+
+          if (comida >=3) {
+            document.getElementById('cc').style.display='block';
+          } 
+          else {
+            document.getElementById('ic').style.display='block';
+            
+          }
+
+          if (ducha <=3) {
+            document.getElementById('cd').style.display='block';
+          } 
+          else {
+            document.getElementById('id').style.display='block';
+            
+          }
+          
+          if (independiente === "si" || independiente === "Si" || independiente === "SI" || independiente === "sI" && edad>=18) {
+            document.getElementById('ci').style.display='block';
+          } 
+          else {
+            document.getElementById('ii').style.display='block';
+            
+          }
+
+          if (mentedetiburon1 === "si" || mentedetiburon1 === "Si" || mentedetiburon1 === "SI" || mentedetiburon1 === "sI" && 
+              mentedetiburon2 === "si" || mentedetiburon2 === "Si" || mentedetiburon2 === "SI" || mentedetiburon2 === "sI") {
+            document.getElementById('cm').style.display='block';
+          }
+          else if(mentedetiburon1 === "si" || mentedetiburon1 === "Si" || mentedetiburon1 === "SI" || mentedetiburon1 === "sI" || 
+                  mentedetiburon2 === "si" || mentedetiburon2 === "Si" || mentedetiburon2 === "SI" || mentedetiburon2 === "sI"){
+                  document.getElementById('mm').style.display='block';
+          } 
+          else {
+            document.getElementById('im').style.display='block';
+            
+          }
+
+          if (familia.toLowerCase() !== "si") {
+            document.getElementById('cf').style.display='block';
+          } 
+          else{
+            document.getElementById('if').style.display='block';
+            
+          }
+
+        }
+      </script>
+
+          <button type="button" onclick="actualizar()" class="btn-actualizar">Actualizar</button><br>
+
+          <script>
+                function actualizar(){
+                  /*Para borrar lo que hay en el imput de la pregunta.*/
+          document.getElementById("nombre").value = "";
+          document.getElementById("edad").value = "";
+          document.getElementById("comida").value = "";
+          document.getElementById("ducha").value = "";
+          document.getElementById("independiente").value = "";
+          document.getElementById("mentedetiburon1").value = "";
+          document.getElementById("mentedetiburon2").value = "";
+          document.getElementById("familia").value = "";
+
+          /*Para mostrar como se ve originalmente el contenedor de las respuestas.*/
+          document.getElementById("txt_explicacion").style.display='block';
+          document.getElementById("cn").style.display='none';
+          document.getElementById("in").style.display='none';
+          document.getElementById("ce").style.display='none';
+          document.getElementById("ie").style.display='none';
+          document.getElementById("cc").style.display='none';
+          document.getElementById("ic").style.display='none';
+          document.getElementById("cd").style.display='none';
+          document.getElementById("id").style.display='none';
+          document.getElementById("ci").style.display='none';
+          document.getElementById("ii").style.display='none';
+          document.getElementById("cm").style.display='none';
+          document.getElementById("mm").style.display='none';
+          document.getElementById("im").style.display='none';
+          document.getElementById("cf").style.display='none';
+          document.getElementById("if").style.display='none';
+
+          /*Para posicionar el pulsor*/
+          document.getElementById("nombre").focus();
+
+           }
+             </script>
+
+             
+         <button type="button" onclick="regresar_menu()" class="btn-regresar">Regresar</button>
+         <script>
+             function regresar_menu(){
+                window.location.href = "menu.html";
+             }
+         </script>
+
+</body>
+</html>

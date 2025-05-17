@@ -1,0 +1,82 @@
+body {
+    background-image: url('../imagenes/ifelseprueba.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    height: 100vh; /* <- Esto hace que el fondo cubra toda la pantalla */
+    margin: 0;      /* Elimina espacios por defecto */
+    padding: 0;
+}
+
+.btn-calcular {
+    background-color: rgb(9, 167, 206); 
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: transform 0.2s ease; /* Para animar suavemente el cambio */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 20px; 
+    border-radius: 50px;
+  }
+  
+  .btn-calcular:hover {
+    background-color: rgb(9, 167, 206);
+    transform: scale(1.2); /* Aumenta el tamaño al 120% */
+  }
+  
+  .btn-regresar {
+    background-color: rgb(209, 76, 76); 
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: transform 0.2s ease; /* Para animar suavemente el cambio */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 8px;                   /* Espacio interior */
+    border-radius: 50px;
+    margin: 20px;
+  }
+  
+  .btn-regresar:hover {
+    background-color: rgb(206, 0, 0);
+    transform: scale(1.2); /* Aumenta el tamaño al 120% */
+  }
+
+.btn-actualizar {
+    background-color: rgb(255, 225, 0);
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: transform 0.2s ease; /* Para animar suavemente el cambio */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 8px;                   /* Espacio interior */
+    border-radius: 50px;
+    float: right;
+    margin: 20px;
+  }
+  
+  .btn-actualizar:hover {
+    background-color: rgb(248, 255, 30);
+    transform: scale(1.2); /* Aumenta el tamaño al 120% */
+  }
+
+  .contenedor-de-respuestas {
+    width: 330px;                    /*Ancho del contenedor*/
+     height: 150px;                  /*Alto del contenedor*/
+     border: 4px double white;
+     margin:0 auto;
+     margin-top:40px;
+     p {
+        color: white;
+     }
+  }
+  
+  .contenedor-de-h1 {
+    background-color: rgb(184, 230, 173); /* Color de fondo */
+    border-radius: 15px;         /* Bordes curveados */
+    padding: 1px;               /* Espacio interno (opcional) */
+    border: 2px solid #4bcc00;   /* Línea de borde (opcional) */
+  }
+

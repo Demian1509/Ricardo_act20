@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #e6ffe6;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 50px;
+        }
+    
+        h2 {
+          color: #2e8b57;
+        }
+    
+        label {
+          font-weight: bold;
+        }
+    
+        input {
+          margin-bottom: 10px;
+          padding: 5px;
+          border: 1px solid #aaa;
+          border-radius: 5px;
+        }
+    
+        button {
+          padding: 10px 20px;
+          background-color: #32cd32;
+          border: none;
+          color: white;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-top: 10px;
+        }
+    
+        button:hover {
+          background-color: #28a428;
+        }
+    
+        #resultado {
+          margin-top: 20px;
+          background-color: white;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.1);
+          width: 300px;
+          text-align: left;
+        }
+      </style>
+</head>
+<body>
+    <center>
+        <h1>Tablas de multiplicar.</h1>
+
+        <p>Ingrese el numero de la tabla de multiplicar que desea:</p>
+        <input type="number" id="numeroam" autofocus>
+
+        <p>Ingrese el numero al que deseas que llegue la tabla de multiplicar:</p>
+        <input type="number" id="numeroal">
+
+        <div id="resultado" style="margin-top: 20px;"></div>
+        <!--<p id="tabla" style="display:none"></p>-->
+        <br><br><br><button type="button" onclick="tabla()">Generar</button>
+    </center>
+
+    <button type="button" onclick="actualizar()">Actualizar</button>
+    <button type="button" onclick="regresar()">Regresar</button>
+
+        <script>
+            function tabla() {
+                const numeroam = document.getElementById("numeroam").value;
+                const final = document.getElementById("numeroal").value;
+                let resultado = "";
+
+                if (isNaN(numeroam) || isNaN(final)) {
+                   resultado = "Por favor ingresa valores válidos.";
+                } 
+                else {
+                       for (let i = 1; i <= final; i++) {
+                            resultado += `${numeroam} × ${i} = ${numeroam * i}<br>`;
+                        }
+                }
+
+                document.getElementById("resultado").innerHTML = resultado;
+            }
+
+            function actualizar() {
+                document.getElementById("resultado").innerHTML = "";
+                document.getElementById("numeroam").value = "";
+                document.getElementById("numeroal").value = "";
+                document.getElementById("numeroam").focus();
+            }
+
+            function regresar(){
+            window.location.href = "menu.html";
+        }
+        </script>
+
+</body>
+</html>

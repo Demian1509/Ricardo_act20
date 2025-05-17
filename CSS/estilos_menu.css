@@ -1,0 +1,42 @@
+body{
+    background-image:url(../imagenes/fondomenu.jpg);
+    background-size:cover;
+    margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px; /* Espacio entre botones */
+    max-width: 600px; /* Evita que se vayan a los bordes */
+    padding: 20px;
+  }
+
+  .contenedor button {
+    flex: 1 1 calc(33.33% - 20px); /* 3 por fila, ajustables */
+    padding: 20px;
+    font-size: 21px; /*Es el tamaño de la letra*/
+    color: white;
+    border: none;
+    border-radius: 5% 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease; /* Para animar suavemente el cambio */
+  }
+
+  button:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al 120% */
+  }
+
+  /*h1{
+    background-color: #B8860B;
+    border-radius: 50px;
+    padding: 30px;
+    font-size: 45px;
+    height: 15vh;
+  }*/

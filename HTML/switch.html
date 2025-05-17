@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  <!--Esto permite que los @media y los tamaños se adapten bien al móvil.-->
+  <title>Switch</title>
+  <link rel="stylesheet" href="../CSS/estilos_switch.css"/>
+  <link rel="icon" href="../imagenes/iconoswitch.png">
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <h1>"Materias y profesores"</h1>
+    <div class="btn-regresar"></div>
+
+    <div class="lista">
+      <p>1. Inglés</p>
+      <p>2. Matemáticas</p>
+      <p>3. Historia</p>
+      <p>4. Química</p>
+      <p>5. Ciencias Sociales</p>
+      <p>6. Submódulo 1</p>
+      <p>7. Submódulo 2</p>
+      <p>8. Submódulo 3</p>
+    </div>
+
+    <div class="contenedor-h3">
+    <h3>Escribe el número de la materia para ver su información:</h3>
+  </div>
+  <center>
+    <input class="caja" type="number" id="opc" value="1" /><br><br>
+    <button onclick="myFunction()" class="btn-comprobar">Ver información</button>
+  </center>
+
+  <div class="contenedor-info">
+  <div class="contenedor-informacion">
+    <p id="demo" style="color: purple;">"Aquí se mostrara la información."</p>
+  </div>
+  </div>
+
+      <br><button onclick="location.href='menu.html'" class="btn-regresar">Regresar</button><br>
+
+  </div>
+
+  <script>
+    function myFunction() {
+      let opc = parseInt(document.getElementById("opc").value);
+
+      switch (opc) {
+        case 1: // Inglés
+          document.getElementById("demo").innerHTML = "Maestra: Elizabeth Trejo Pérez" + "<p>" 
+                              + "<b>PROPOSITO DE LA ASIGNATURA/SUBMÓDULO:</b> <br> Comunicarse en una segunda lengua en"+ 
+                              " situaciones cotidianas y lo demuestra por medio del uso y la aplicación de las estructuras vistas";
+          break;
+        case 2: // Matemáticas
+          document.getElementById("demo").innerHTML = "Maestra: Dalia González Muñoz" + "<p>" 
+                              + "<b>PROPOSITO DE LA ASIGNATURA/SUBMÓDULO:</b> <br> Aplica procedimientos algorítmicos e interpreta"+ 
+                              " sus resultados para anticipar, encontrar y validar soluciones a problemas matemáticos, de áreas del"+ 
+                              " conocimiento y de su vida personal.";
+          break;
+        case 3: // Historia
+          document.getElementById("demo").innerHTML = "Maestro: Josue Aaron Lugo Trejo" + "<p>" 
+                              + "<b>PROPOSITO DE LA ASIGNATURA/SUBMÓDULO:</b> <br> Desarrollar "+ 
+                                "aplicaciones Web que se ejecuten en el cliente.";
+          break;
+        case 4: // Química
+          document.getElementById("demo").innerHTML = "Maestra: Elvira García Ibarra" + "<p>" 
+                              + "<b>PROPOSITO DE LA ASIGNATURA/SUBMÓDULO:</b> <br> Analizar la importancia de las reacciones químicas"+ 
+                              " naturales o creadas por el hombre"+ 
+                              " en nuestro entorno, ya que son responsables de los cambios que experimenta la materia en condiciones";
+          break;
+        case 5: // Sociales
+          document.getElementById("demo").innerHTML = "Maestra: Brenda Miriam Moreno Salinas" + "<p>" 
+                              + "<b>PROPOSITO DE LA ASIGNATURA/SUBMÓDULO:</b> <br> Tiene el propósito de contribuir a la comprensión"+ 
+                              " y explicación del funcionamiento de la sociedad en su complejidad interna y contextual.";
+          break;
+        case 6: // Submódulo 1
+          document.getElementById("demo").innerHTML = "Maestro: Ricardo Morales Munguía" + "<p>" 
+                              + "<b>PROPOSITO DE LA ASIGNATURA/SUBMÓDULO:</b> <br> Al finalizar el módulo el estudiante será capaz de:" +
+                              " Desarrollar aplicaciones web y construir páginas web";
+          break;
+        case 7: // Submódulo 2
+          document.getElementById("demo").innerHTML = "Maestro: Ezequiel Barrón Cano" + "<p>" 
+                              + "<b>PROPOSITO DE LA ASIGNATURA/SUBMÓDULO:</b> <br> Desarrollar aplicaciones Web que se ejecuten en el cliente.";
+          break;
+        case 8: // Submódulo 3
+          document.getElementById("demo").innerHTML = "Maestra: María Guadalupe Cuéllar Vega" + "<p>" 
+                              + "<b>PROPOSITO DE LA ASIGNATURA/SUBMÓDULO:</b> <br> Desarrollar aplicaciones que se ejecutan en el servidor";
+          break;
+
+        default:
+          document.getElementById("demo").innerHTML = "No existe esa opción";
+      }
+    }
+  </script>
+
+
+</body>
+</html>

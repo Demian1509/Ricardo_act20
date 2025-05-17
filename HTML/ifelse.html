@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If else</title>
+    <link rel="icon" href="../imagenes/fondoifelse.png">
+    <link rel="stylesheet" href="../CSS/estilos_ifelse.css">
+</head>
+<body>
+    <center>
+
+    <div class="contenedor-de-h1">
+    <H1>Calcular si una calificación es apovatoria o reprovatoria.</H1>
+    </div>
+
+    <div class="contenedor-de-respuestas">
+    <p>Ingresa una calificación:</p>
+    <input type="text" id="calificacion" autofocus>
+
+    <p id="cala" style="display:none">Muy bien, tiene una calificación aprobatoria.</p>
+    <p id="calr" style="display:none">Lo lamento, la calificación es reprobatoria.</p>
+    <p id="cals" style="display:none">Ingresa una calificación menor a 10.</p>
+    <p id="cali" style="display:none">Ingresa una calificación con números positivos.</p>
+    </div>
+
+    <br><br><br>
+    <button type="button" onclick="comprobar()" class="btn-calcular">Calcular</button>
+    </div>
+    </center>
+
+    <button type="button" onclick="actualizar()" class="btn-actualizar">Nueva calificación</button>
+    <button type="button" onclick="regresar()" class="btn-regresar">Regresar</button>
+
+    <script>
+        function comprobar(){
+            const calificacion = document.getElementById("calificacion").value;
+
+            if(calificacion >= 6 && calificacion <= 10){
+                document.getElementById('cala').style.display='block';
+            }
+            else if(calificacion >10){
+                document.getElementById('cals').style.display='block';
+                document.getElementById("calificacion").value = "";
+                document.getElementById("calificacion").focus();
+                document.getElementById("cala").style.display = "none";
+                document.getElementById("calr").style.display = "none";
+            }
+            else if(calificacion <= -1){
+                document.getElementById('cali').style.display='block';
+                document.getElementById("calificacion").value = "";
+                document.getElementById("calificacion").focus();
+                document.getElementById("cala").style.display = "none";
+                document.getElementById("calr").style.display = "none";
+            }
+            else{
+                document.getElementById('calr').style.display='block';
+            }
+        }
+        
+        function actualizar(){
+            document.getElementById("calificacion").value = "";
+            document.getElementById("calificacion").focus();
+            document.getElementById("cala").style.display = "none";
+            document.getElementById("calr").style.display = "none";
+            document.getElementById("cals").style.display = "none";
+            document.getElementById("cali").style.display = "none";
+        }
+
+        function regresar(){
+            window.location.href = "menu.html";
+        }
+    </script>
+
+</body>
+</html>

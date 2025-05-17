@@ -1,0 +1,108 @@
+body {
+    background-color: blanchedalmond;
+    background-size:cover;
+    margin: 0;
+      padding: 0;
+}
+
+.contenedor-de-respuestas {
+  width: 400px;              /* Ancho fijo */
+  background-color: lightblue; /* Color de fondo */
+  border-radius: 15px;         /* Bordes curveados */
+  padding: 20px;               /* Espacio interno (opcional) */
+  border: 2px solid #0077cc;   /* Línea de borde (opcional) */
+}
+
+.contenedor-de-h1 {
+  background-color: rgb(184, 230, 173); /* Color de fondo */
+  border-radius: 15px;         /* Bordes curveados */
+  padding: 20px;               /* Espacio interno (opcional) */
+  border: 2px solid #4bcc00;   /* Línea de borde (opcional) */
+}
+
+.btn-enviar {
+  background-color: rgb(132, 188, 93); 
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: transform 0.2s ease; /* Para animar suavemente el cambio */
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 20px; 
+  border-radius: 50px;
+}
+
+.btn-enviar:hover {
+  background-color: rgb(40, 229, 11);
+  transform: scale(1.2); /* Aumenta el tamaño al 120% */
+}
+
+.btn-regresar {
+  background-color: rgb(209, 76, 76); 
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: transform 0.2s ease; /* Para animar suavemente el cambio */
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 8px;                   /* Espacio interior */
+  border-radius: 50px;
+  margin: 20px;
+}
+
+.btn-regresar:hover {
+  background-color: rgb(206, 0, 0);
+  transform: scale(1.2); /* Aumenta el tamaño al 120% */
+}
+
+.btn-actualizar {
+  background-color: rgb(255, 225, 0);
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: transform 0.2s ease; /* Para animar suavemente el cambio */
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 8px;                   /* Espacio interior */
+  border-radius: 50px;
+  float: right;
+  margin: 20px;
+}
+
+.btn-actualizar:hover {
+  background-color: rgb(248, 255, 30);
+  transform: scale(1.2); /* Aumenta el tamaño al 120% */
+}
+
+@media (max-width: 738px) {
+    nav {
+flex-direction: column; align-items: center; font-size: 1.1em; }
+.section h1 { 
+  font-size: 2em;
+  width: 80%;         /* Reduce el tamaño al 80% del ancho de la ventana */
+  margin: 5px auto;  /* Separa del borde superior/inferior y lo centra horizontalmente */
+  padding: 1px;      /* Espacio interno (entre el borde del div y su contenido) */
+ }
+
+ .contenedor-respuestas {
+   width: auto;         /* Reduce el tamaño al 80% del ancho de la ventana */
+ }
+
+.section h2 { font-size: 1.4em; }
+
+.section h3 { font-size: 1.2em; }
+
+.section p,
+
+.section ul li {
+font-size: 1em;
+}
+
+.section img {
+   width: 90%; max-width: 300px; }
+
+iframe {
+width: 95%;
+max-width: 100%;
+}
+   }

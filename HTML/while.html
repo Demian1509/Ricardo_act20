@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while</title>
+    <link rel="stylesheet" href="../CSS/estilos_while.css">
+</head>
+<body>
+    <h1>Este apartado te permite imprimir frutas</h1>
+    <h3>pero solamente puedes imprimir maximo 56 frutas</h3>
+
+    <p>Ingresa el número de frutas que deseas imprimir:</p>
+    <input type="text" id="totalfrutas" autofocus>
+
+    <p id="imprimir"></p>
+
+    <button type="button" onclick="imprimir()">Imprimir</button>
+    <button type="button" onclick="actualizar()">Actualizar</button>
+    <button type="button" onclick="regresar()">Regresar</button>
+
+    <script>
+        function imprimir() {
+
+            const frutas = [
+        "🍎 Manzana", "🍐 Pera", "🍌 Plátano", "🍇 Uva", "🍈 Melón", "🍉 Sandía", "🍑 Durazno", "🍒 Cereza",
+        "🥝 Kiwi", "🍍 Piña", "🥭 Mango", "🍊 Mandarina", "🍋 Limón", "🍓 Fresa", "🍅 Tomate", "🥥 Coco",
+        "🍏 Manzana Verde", "🍊 Naranja", "🥑 Aguacate", "🍆 Berenjena", "🍠 Batata", "🌽 Maíz", "🍄 Hongo",
+        "🍐 Guayaba", "🍍 Carambola", "🍉 Pitahaya", "🍋 Lichi", "🍇 Maracuyá", "🍌 Tamarindo", "🍑 Chirimoya",
+        "🍓 Rambután", "🍊 Mamey", "🍎 Mangostán", "🍏 Zapote", "🍈 Níspero", "🍉 Atemoya", "🍒 Caimito",
+        "🍋 Feijoa", "🫐 Arándano", "🍇 Mora", "🍓 Frambuesa", "🫐 Grosella", "🫐 Zarzamora", "🥜 Nuez",
+        "🌰 Almendra", "🌰 Avellana", "🌰 Castaña", "🥜 Pistacho", "🥥 Coco", "🍊 Pomelo", "🍊 Clementina",
+        "🍋 Lima", "🍊 Bergamota", "🍋 Yuzu", "🍊 Kumquat", "🍋 Calamondín", "🍉 Naranjilla", "🍋 Sudachi"
+    ];
+
+const cantidad = parseInt(document.getElementById("totalfrutas").value);
+let i = 0;
+let text = "";
+
+if (isNaN(cantidad) || cantidad <= 0) {
+        text = "<p class='error'>Por favor ingresa un número válido mayor a 0.</p>";
+    } else {
+        const limite = Math.min(cantidad, frutas.length);
+        while (i < limite) {
+            text += `<div class="tarjeta">${frutas[i]}</div>`;
+            i++;
+        }
+    }
+
+    document.getElementById("imprimir").innerHTML = text;
+}
+
+     function actualizar() {
+        document.getElementById("imprimir").innerHTML = "";
+        document.getElementById("totalfrutas").value = "";
+        document.getElementById("totalfrutas").focus();
+     }
+
+     function regresar(){
+        window.location.href = "menu.html";
+     }
+    </script>
+</body>
+</html>

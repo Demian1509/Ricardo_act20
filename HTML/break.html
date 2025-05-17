@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break</title>
+    <link rel="stylesheet" href="../CSS/estilos_break.css">
+</head>
+<body>
+    <h1>Este apartado te permite imprimir países</h1>
+    <h3>pero solamente puedes imprimir maximo 50 países</h3>
+
+    <p>Ingresa el número de países que deseas imprimir:</p>
+    <input type="text" id="totalpaises" autofocus>
+
+    <p id="imprimir"></p>
+
+    <button type="button" onclick="imprimir()">Imprimir</button>
+    <button type="button" onclick="actualizar()">Actualizar</button>
+    <button type="button" onclick="regresar()">Regresar</button>
+
+    <script>
+        function imprimir() {
+
+            const paises = [
+  // África
+  "Nigeria", "Egipto", "Sudáfrica", "Kenia", "Ghana", "Marruecos", "Etiopía", "Senegal", "Tanzania", "Angola",
+
+  // América
+  "México", "Estados Unidos", "Canadá", "Brasil", "Argentina", "Colombia", "Perú", "Chile", "Venezuela", "Cuba",
+
+  // Asia
+  "China", "India", "Japón", "Corea del Sur", "Indonesia", "Arabia Saudita", "Irán", "Turquía", "Vietnam", "Filipinas",
+
+  // Europa
+  "España", "Francia", "Alemania", "Italia", "Reino Unido", "Portugal", "Suecia", "Noruega", "Grecia", "Países Bajos",
+
+  // Oceanía
+  "Australia", "Nueva Zelanda", "Fiyi", "Papúa Nueva Guinea", "Samoa", "Tonga", "Islas Salomón", "Vanuatu", "Micronesia", "Nauru"
+];
+
+
+const cantidad = parseInt(document.getElementById("totalpaises").value);
+let i = 0;
+let text = "";
+
+if (isNaN(cantidad) || cantidad <= 0) {
+            text = "Por favor ingresa un número válido mayor a 0.";
+        } else {
+            let limite = Math.min(cantidad, paises.length);             //devuelve el menor de los dos valores que le pases.
+            while (i<50) {
+                if (i === limite) { break; }
+                      text += paises[i] + "<br>";
+                      i++;
+    }
+        }
+
+    document.getElementById("imprimir").innerHTML = text;
+}
+
+     function actualizar() {
+        document.getElementById("imprimir").innerHTML = "";
+        document.getElementById("totalpaises").value = "";
+        document.getElementById("totalpaises").focus();
+     }
+
+     function regresar(){
+        window.location.href = "menu.html";
+     }
+    </script>
+</body>
+</html>
